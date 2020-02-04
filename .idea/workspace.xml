@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70455b96-a3f8-403f-b0b3-906085a142c5" name="Default Changelist" comment="" />
+    <list default="true" id="70455b96-a3f8-403f-b0b3-906085a142c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/user/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +24,11 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XKx3tlrTOoo9GfjWaQVx8wOYYB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -47,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580808391981</updated>
-      <workItem from="1580808393643" duration="5144000" />
+      <workItem from="1580808393643" duration="20194000" />
     </task>
     <servers />
   </component>
@@ -55,9 +70,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="642" y="195" width="709" height="528" key="find.popup" timestamp="1580813527026">
+    <state x="472" y="84" key="CommitChangelistDialog2" timestamp="1580834246828">
       <screen x="55" y="24" width="1625" height="1026" />
     </state>
-    <state x="642" y="195" width="709" height="528" key="find.popup/55.24.1625.1026@55.24.1625.1026" timestamp="1580813527026" />
+    <state x="472" y="84" key="CommitChangelistDialog2/55.24.1625.1026@55.24.1625.1026" timestamp="1580834246828" />
+    <state x="642" y="195" width="709" height="528" key="find.popup" timestamp="1580829883950">
+      <screen x="55" y="24" width="1625" height="1026" />
+    </state>
+    <state x="642" y="195" width="709" height="528" key="find.popup/55.24.1625.1026@55.24.1625.1026" timestamp="1580829883950" />
   </component>
 </project>
