@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Post;
 
 class UserController extends Controller
 {
-    public function profile()
+    public function profile($id)
     {
-        $user = Auth::user();
-        return view('user.profile',compact('user',$user));
+
+        $user = Auth::find($id);
+        $posts= Post::where('author_id',$user->id)->get();
+        return view('user.profile',compact('user',$user,'posts',$posts));
     }
     public function update_avatar(Request $request){
 
@@ -29,6 +32,5 @@ class UserController extends Controller
 
         return back()
             ->with('success','You have successfully upload image.');
-
     }
 }
