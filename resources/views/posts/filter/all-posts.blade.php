@@ -2,6 +2,6 @@
 
 @section('content')
 @foreach($posts as $post)
-    @include('posts.create.post')
+    @include('posts.post')
 @endforeach
 @endsection

@@ -2,33 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\PostRequest;
+use App\Repository\UserRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Post;
+
 
 class UserController extends Controller
 {
-    public function profile($id)
+    public function profile($user,PostRequest $postRequest)
     {
-
-        $user = Auth::find($id);
-        $posts= Post::where('author_id',$user->id)->get();
-        return view('user.profile',compact('user',$user,'posts',$posts));
+        return view('user.profile',['user'=>$user,'posts'=>$postRequest->getUsersPosts($user->id)]);
     }
-    public function update_avatar(Request $request){
-
-        $request->validate([
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        $user = Auth::user();
-
-        $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
-
-        $request->avatar->storeAs('avatars',$avatarName);
-
-        $user->avatar = $avatarName;
-        $user->save();
+    public function updateAvatar(UserRepository $User){
+        $User->changeAvatar();
 
         return back()
             ->with('success','You have successfully upload image.');

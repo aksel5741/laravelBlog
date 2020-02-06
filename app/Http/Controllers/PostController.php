@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\PostRequest;
 use Illuminate\Http\Request;
 use App\Post as Post;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-
-
     public function index()
     {
         return view('posts.create.posts_create');
     }
 
-    public function show()
+    public function show(PostRequest $postRequest)
     {
-        $posts=Post::all();
-        $user = Auth::user();
-        return view('posts.filter.all-posts', compact('user',$user,'posts',$posts));
+
+        return view('posts.filter.all-posts',['posts'=>$postRequest->getAllPosts()]);
     }
 
     public function create(Request $request)
