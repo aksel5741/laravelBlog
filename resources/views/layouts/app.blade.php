@@ -70,7 +70,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    <a class="dropdown-item" href="/user">
+                                    <a class="dropdown-item" href="profile">
                                         User Profile
                                     </a>
 

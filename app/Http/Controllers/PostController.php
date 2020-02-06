@@ -11,7 +11,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('posts.create.posts_create');
+        return view('posts.create.posts-create');
     }
 
     public function show(PostRequest $postRequest)

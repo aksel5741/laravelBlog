@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Contracts\PostRequest;
 use App\Repository\PostRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(PostRequest::class, PostRepository::class);
+        $this->app->bind('PostRepository', PostRepository::class);
     }
 
     /**

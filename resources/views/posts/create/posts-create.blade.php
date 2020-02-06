@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <form action="/posts_create" method="post" enctype="multipart/form-data">
+        <form action="posts-create" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <p>title</p>

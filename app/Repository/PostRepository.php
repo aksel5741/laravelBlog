@@ -7,7 +7,7 @@ namespace App\Repository;
 use App\Contracts\PostRequest;
 use App\Post;
 
-class PostRepository implements PostRequest
+class PostRepository
 {
     public function getPostById($id)
     {
