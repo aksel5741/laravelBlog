@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70455b96-a3f8-403f-b0b3-906085a142c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Facades/PostManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repository/CommentRtrepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Comments/comment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Facades/PostRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/PostRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/create/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create/preview.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/filter/all-posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/filter/all-posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Comments/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Comments/comment.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +164,7 @@
       <workItem from="1580971984573" duration="1620000" />
       <workItem from="1580973733499" duration="13232000" />
       <workItem from="1581015019930" duration="5716000" />
-      <workItem from="1581059024421" duration="17987000" />
+      <workItem from="1581059024421" duration="22976000" />
     </task>
     <servers />
   </component>
@@ -204,6 +187,10 @@
       <screen x="55" y="24" width="1625" height="1026" />
     </state>
     <state x="482" y="151" width="860" height="680" key="CommitChangelistDialog2/55.24.1625.1026@55.24.1625.1026" timestamp="1580920790862" />
+    <state x="154" y="96" width="1427" height="855" key="DiffContextDialog" timestamp="1581085886267">
+      <screen x="55" y="24" width="1625" height="1026" />
+    </state>
+    <state x="154" y="96" width="1427" height="855" key="DiffContextDialog/55.24.1625.1026@55.24.1625.1026" timestamp="1581085886267" />
     <state x="499" y="327" key="NewPhpClassDialog" timestamp="1581059765792">
       <screen x="55" y="24" width="1625" height="1026" />
     </state>
