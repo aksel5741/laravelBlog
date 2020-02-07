@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Facades\UserRepository;
 use App\Repository\PostRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -15,8 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-        $this->app->bind('PostRepository', PostRepository::class);
+
     }
 
     /**
@@ -27,6 +27,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        //
     }
 }

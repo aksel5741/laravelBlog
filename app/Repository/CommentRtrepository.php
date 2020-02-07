@@ -3,18 +3,12 @@
 
 namespace App\Repository;
 
-
-use App\Facades\PostManager;
+use App\Comment;
 use App\Post;
-use Mockery\Generator\StringManipulation\Pass\ClassNamePass;
 
-class PostRepository
+
+class CommentRtrepository
 {
-    public function getPostById($id)
-    {
-        return Post::findOrFail($id);
-    }
-
     public function getAllPosts()
     {
         return Post::all();

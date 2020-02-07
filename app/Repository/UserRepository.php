@@ -14,7 +14,7 @@ namespace App\Repository;
         return User::findOrFail($id);
     }
 
-     public function getAllUsers($id)
+     public function getAllUsers()
      {
          return User::all();
      }

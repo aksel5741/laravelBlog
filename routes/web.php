@@ -24,7 +24,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('posts-create', 'PostController@index');
 Route::post('posts-create', 'PostController@create');
 
-Route::get('profile/{user}', 'UserController@profile');
+Route::get('post/{post}', 'PostController@post')->name('post-page');
+Route::post('post/{post}', 'CommentsController@create')->name('post');
+
+Route::get('profile/{user}', 'UserController@profile')->name('profile');
 Route::post('profile/{user}', 'UserController@updateAvatar');
 
 Route::get('all-posts','PostController@show')->name('all-posts');

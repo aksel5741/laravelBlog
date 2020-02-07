@@ -35,6 +35,8 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('user', \App\User::class);
+        Route::model('post', \App\Post::class);
+        Route::model('comment', \App\Comment::class);
     }
 
     /**
