@@ -15,9 +15,21 @@ class UserController extends Controller
         return view('user.profile',['id',$user->id,'user'=>$user,'posts'=>PostManager::getUsersPosts($user->id)]);
     }
 
-    public function updateAvatar(){
+    public function updateAvatar(Request $request){
 
-        return back()
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $user = Auth::user();
+
+        $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+
+        $request->avatar->storeAs('avatars',$avatarName);
+
+        $user->avatar = $avatarName;
+        $user->save();
+
+       return back()
             ->with('success','You have successfully upload image.');
     }
 }

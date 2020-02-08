@@ -28,6 +28,6 @@ Route::get('post/{post}', 'PostController@post')->name('post-page');
 Route::post('post/{post}', 'CommentsController@create')->name('post');
 
 Route::get('profile/{user}', 'UserController@profile')->name('profile');
-Route::post('profile/{user}', 'UserController@updateAvatar');
+Route::post('profile', 'UserController@updateAvatar');
 
 Route::get('all-posts','PostController@show')->name('all-posts');

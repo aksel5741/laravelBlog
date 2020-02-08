@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    //
+
     public function post()
     {
-        return $this->hasOne('App\Post','post_id');
+        return $this->hasOne('App\Post');
     }
 
     public function user()
     {
-        return $this->hasOne('App\User','id');
+        return $this->hasOne('App\User','id','author_id');
     }
 }

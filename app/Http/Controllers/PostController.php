@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ViewPost;
 use App\Facades\PostManager;
 use Illuminate\Http\Request;
 use App\Post as Post;
@@ -16,6 +17,7 @@ class PostController extends Controller
 
     public function show()
     {
+
         return view('posts.filter.all-posts',['posts'=>PostManager::getAllPosts()]);
     }
 
@@ -34,7 +36,7 @@ class PostController extends Controller
 
     public function post($post)
     {
-
+        event(new ViewPost($post));
         return view('posts.post',['post'=>$post]);
     }
 }

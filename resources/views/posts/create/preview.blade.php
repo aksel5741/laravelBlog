@@ -14,6 +14,7 @@
 
                 </div>
                 <div class="panel-footer">
+                    <p >Views:{{$post->views}}</p>
                     <button><a class="nav-link" href="{{route('post-page',['post'=>$post]) }}">More</a></button>
                 </div>
             </div>
