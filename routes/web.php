@@ -24,6 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('posts-create', 'PostController@index')->name('post-create');
 Route::post('posts-create', 'PostController@create');
 
+Route::get('posts-change/{post}', 'PostController@postChange')->name('post-change');
+Route::patch('posts-change/{post}', 'PostController@postChange')->name('patch-post');
+
 Route::get('post/{post}', 'PostController@post')->name('post-page');
 Route::post('post/{post}', 'CommentsController@create')->name('post');
 

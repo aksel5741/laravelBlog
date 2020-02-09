@@ -62,4 +62,18 @@ class PostRepository implements PostRepositoryInterface
         $posts=$this->Post->orderBy('views','desc')->paginate(2);
         return $posts;
     }
+    public function updatePost($title,$category,$post_content,$post_id,$categories)
+    {
+        $oldPost=$this->getPostById($post_id);
+        //dd($post);
+        $oldPost->title=$title;
+        $oldPost->category=$category;
+        $oldPost->post_content=$post_content;
+        $oldPost->author_id=Auth::id();
+        $oldPost->save();
+        $oldPost->categories()->detach();
+        if($categories!=null){
+            $oldPost->categories()->attach($categories);
+        }
+    }
 }

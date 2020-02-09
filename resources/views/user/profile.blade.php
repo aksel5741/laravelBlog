@@ -9,6 +9,7 @@
                     <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                         <img alt="User Pic" src="/storage/avatars/{{ $user->avatar }}" id="profile-image1" class="img-circle img-responsive">
                         <div class="row justify-content-center">
+                            @if($user->id==\Illuminate\Support\Facades\Auth::id())
                             <form action="/profile" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
@@ -16,6 +17,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
+                                @endif
                         </div>
                     </div>
                     <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
