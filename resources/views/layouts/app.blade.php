@@ -38,6 +38,18 @@
                                 <a class="dropdown-item" href="{{ route('all-posts') }}">
                                     All Posts
                                 </a>
+                                <a class="dropdown-item" href="{{ route('post-create') }}">
+                                    Create Post
+                                </a>
+                                <a class="dropdown-item" href="{{ route('my-posts') }}">
+                                    My Posts
+                                </a>
+                                <a class="dropdown-item" href="{{ route('top-posts') }}">
+                                    Top Posts
+                                </a>
+                                <a class="dropdown-item" href="{{ route('unanswered-posts') }}">
+                                    Unanswered Posts
+                                </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>

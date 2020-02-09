@@ -4,29 +4,30 @@
 namespace App\Repository;
 
 use App\Comment;
-use App\Post;
+use App\Contracts\CommentRepositoryInterface\CommentRepositoryInterface;
+use App\Contracts\CommentRepositoryInterface\Request;
+use Illuminate\Support\Facades\Auth;
 
 
-class CommentRtrepository
+class CommentRtrepository implements CommentRepositoryInterface
 {
-    public function getAllPosts()
-    {
-        return Post::all();
-    }
+   private $Comment;
 
-    public function getUsersPosts($user_id)
-    {
-        return Post::where('author_id',$user_id)->get();
-    }
+   public function __construct(Comment $comment)
+   {
+       $this->Comment=$comment;
+   }
 
+   public function getPostComments($post_id)
+   {
+       return $this->Comment->where('post_id',$post_id)->get;
+   }
 
-    public function getUnansweredPosts()
-    {
-
-    }
-
-    public function createPost()
-    {
-
-    }
+   public function create($comment, $post_id, $author_id = 0)
+   {
+       $this->Comment->comm_content=$comment;
+       $this->Comment->author_id=Auth::id();
+       $this->Comment->post_id=$post_id;
+       $this->Comment->save();
+   }
 }

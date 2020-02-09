@@ -2,36 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\CategoryRepositoryInterface\CategoryRepositoryInterface;
+use App\Contracts\CommentRepositoryInterface\CommentRepositoryInterface;
+use App\Contracts\PostRepositoryInterface\PostRepositoryInterface;
 use App\Events\ViewPost;
-use App\Facades\PostManager;
 use Illuminate\Http\Request;
-use App\Post as Post;
 use Illuminate\Support\Facades\Auth;
-
 class PostController extends Controller
 {
+    private $PostRepositoryInterface;
+
+    private $CommentRepositoryInterface;
+
+    private $categoryRepositoryInterface;
+
+    public function __construct(PostRepositoryInterface $postRepository, CommentRepositoryInterface $commentRepository, CategoryRepositoryInterface $categoryRepositoryInterface)
+    {
+        $this->PostRepositoryInterface=$postRepository;
+        $this->CommentRepositoryInterface=$commentRepository;
+        $this->categoryRepositoryInterface=$categoryRepositoryInterface;
+    }
+
     public function index()
     {
-        return view('posts.create.posts-create');
+        $categories=$this->categoryRepositoryInterface->getAllCategories();
+        return view('posts.create.posts-create',['categories'=>$categories]);
     }
 
     public function show()
     {
-
-        return view('posts.filter.all-posts',['posts'=>PostManager::getAllPosts()]);
+        return view('posts.filter.all-posts',['posts'=>$this->PostRepositoryInterface->getAllPosts()]);
     }
 
     public function create(Request $request)
     {
-        $post=new Post;
-        $post->title = $request->title;
-        $post->category=$request->category;
-        $post->post_content=$request->post_content;
-        $post->author_id=Auth::id();
-        $post->save();
-
-         return back()
-             ->with('success','You have successfully created post.');
+        $this->PostRepositoryInterface->createPost($request->title,$request->category,$request->post_content,$request->input('categories'));
+         return back();
     }
 
     public function post($post)
@@ -39,4 +45,17 @@ class PostController extends Controller
         event(new ViewPost($post));
         return view('posts.post',['post'=>$post]);
     }
+
+    public function usersPost(){
+        return view('posts.filter.all-posts',['posts'=>$this->PostRepositoryInterface->getUsersPosts(Auth::id())]);
+    }
+
+    public function topPosts(){
+        return view('posts.filter.all-posts',['posts'=>$this->PostRepositoryInterface->getMostViewedPosts()]);
+    }
+
+    public function unansweredPosts(){
+        return view('posts.filter.all-posts',['posts'=>$this->PostRepositoryInterface->getUnansweredPosts()]);
+    }
+
 }

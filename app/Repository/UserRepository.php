@@ -3,11 +3,12 @@
 
 namespace App\Repository;
 
+ use App\Contracts\UserRepositoryInterface\UserRepositoryInterface;
  use App\User;
  use Illuminate\Http\Request;
  use Illuminate\Support\Facades\Auth;
 
- class UserRepository
+ class UserRepository implements UserRepositoryInterface
 {
     public function getUserById($id)
     {
@@ -34,6 +35,5 @@ namespace App\Repository;
         $user->avatar = $avatarName;
         $user->save();
     }
-
 
 }

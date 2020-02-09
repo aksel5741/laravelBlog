@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Facades\PostManager;
-use App\Facades\UserManager;
+use App\Contracts\PostRepositoryInterface\PostRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 
 class UserController extends Controller
 {
+
+    private $PostRepositoryInterface;
+
+    public function __construct(PostRepositoryInterface $postRepository)
+    {
+        $this->PostRepositoryInterface=$postRepository;
+    }
+
     public function profile($user)
     {
-        return view('user.profile',['id',$user->id,'user'=>$user,'posts'=>PostManager::getUsersPosts($user->id)]);
+        return view('user.profile',['id',$user->id,'user'=>$user,'posts'=>$this->PostRepositoryInterface->getUsersPosts($user->id)]);
     }
 
     public function updateAvatar(Request $request){
