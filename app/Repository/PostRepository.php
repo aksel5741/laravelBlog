@@ -26,17 +26,17 @@ class PostRepository implements PostRepositoryInterface
 
     public function getAllPosts()
     {
-        return $this->Post->paginate(2);
+        return $this->Post->paginate(15);
     }
 
     public function getUsersPosts($user_id)
     {
-        return $this->Post->where('author_id',$user_id)->paginate(2);
+        return $this->Post->where('author_id',$user_id)->paginate(15);
     }
 
     public function getUnansweredPosts()
     {
-        $posts=$this->Post->doesntHave('comment')->paginate(2);
+        $posts=$this->Post->doesntHave('comment')->paginate(15);
 
         return $posts;
     }
@@ -55,14 +55,7 @@ class PostRepository implements PostRepositoryInterface
 
     public function getMostViewedPosts()
     {
-        $posts=$this->Post->orderBy('views','desc')->paginate(2);
-        return $posts;
-    }
-
-    public function getPostsByCategory($category)
-    {
-        $posts=$this->Post->categories()->where('name','animal')->get();
-        dd($posts);
+        $posts=$this->Post->orderBy('views','desc')->paginate(15);
         return $posts;
     }
 

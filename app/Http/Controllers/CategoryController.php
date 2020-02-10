@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\CategoryRepositoryInterface\CategoryRepositoryInterface;
-use App\Contracts\PostRepositoryInterface\PostRepositoryInterface;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     private $CategoryRepositoryInterface;
-    private $postRepositoryInterface;
 
-    public function __construct(CategoryRepositoryInterface $categoryRepository, PostRepositoryInterface $postRepositoryInterface)
+
+    public function __construct(CategoryRepositoryInterface $categoryRepository)
     {
-        $this->postRepositoryInterface=$postRepositoryInterface;
         $this->CategoryRepositoryInterface=$categoryRepository;
     }
 
@@ -29,8 +27,7 @@ class CategoryController extends Controller
     }
 
     public function make(Request $request){
-        $posts=$this->CategoryRepositoryInterface->getSome($request->categories);
-        //$post=$this->postRepositoryInterface->getPostsByCategory($request->categories);
+        $posts=$this->CategoryRepositoryInterface->filterByCategory($request->categories);
         return view('posts.filter.categories',['categories'=>$this->CategoryRepositoryInterface->getAllCategories(),'posts'=>$posts]);
     }
 }

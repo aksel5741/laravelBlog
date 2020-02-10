@@ -29,7 +29,7 @@ Route::post('posts-create', 'PostController@create');
 
 Route::post('create-category', 'CategoryController@create')->name('category');
 
-Route::get('posts-change/{post}', 'PostController@postChange')->name('post-change');
+Route::get('posts-change/{post}', 'PostController@postForChange')->name('post-change');
 Route::patch('posts-change/{post}', 'PostController@postChange')->name('patch-post');
 
 Route::get('post/{post}', 'PostController@post')->name('post-page');

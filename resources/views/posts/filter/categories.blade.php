@@ -11,7 +11,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-@if(!empty($post))
+@if(!empty($posts))
 @foreach($posts as $post)
     @include('posts.create.preview')
 @endforeach

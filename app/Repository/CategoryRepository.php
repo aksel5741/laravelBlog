@@ -27,7 +27,7 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         return $this->Category->all();
     }
-    public function getSome($category)
+    public function filterByCategory($category)
     {
        return $posts=$this->Category->find($category[0])->posts()->get();
     }

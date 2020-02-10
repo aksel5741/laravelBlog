@@ -8617,6 +8617,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
+  display: block;
   padding-top: 1.5rem !important;
 }
 

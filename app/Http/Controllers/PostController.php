@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\CategoryRepositoryInterface\CategoryRepositoryInterface;
-use App\Contracts\CommentRepositoryInterface\CommentRepositoryInterface;
 use App\Contracts\PostRepositoryInterface\PostRepositoryInterface;
 use App\Events\ViewPost;
 use Illuminate\Http\Request;
@@ -12,14 +11,12 @@ class PostController extends Controller
 {
     private $PostRepositoryInterface;
 
-    private $CommentRepositoryInterface;
 
     private $categoryRepositoryInterface;
 
-    public function __construct(PostRepositoryInterface $postRepository, CommentRepositoryInterface $commentRepository, CategoryRepositoryInterface $categoryRepositoryInterface)
+    public function __construct(PostRepositoryInterface $postRepository, CategoryRepositoryInterface $categoryRepositoryInterface)
     {
         $this->PostRepositoryInterface=$postRepository;
-        $this->CommentRepositoryInterface=$commentRepository;
         $this->categoryRepositoryInterface=$categoryRepositoryInterface;
     }
 
@@ -31,9 +28,12 @@ class PostController extends Controller
 
     public function postChange(Request $request,$post)
     {
-        if($request->method()=='PATCH'){
-            $this->PostRepositoryInterface->updatePost($request->title,$request->post_content,$post->id,$request->input('categories'));
-        };
+        $this->PostRepositoryInterface->updatePost($request->title,$request->post_content,$post->id,$request->input('categories'));
+        return $this->usersPost();
+    }
+
+    public function postForChange($post)
+    {
         $categories=$this->categoryRepositoryInterface->getAllCategories();
         return view('posts.create.posts-create',['categories'=>$categories,'post'=>$post]);
     }

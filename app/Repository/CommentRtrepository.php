@@ -17,11 +17,6 @@ class CommentRtrepository implements CommentRepositoryInterface
        $this->Comment=$comment;
    }
 
-   public function getPostComments($post_id)
-   {
-       return $this->Comment->where('post_id',$post_id)->paginate(2);
-   }
-
    public function create($comment, $post_id, $author_id = 0)
    {
        $this->Comment->comm_content=$comment;
