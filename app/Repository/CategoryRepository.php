@@ -15,8 +15,21 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         $this->Category=$category;
     }
+
+    public function create($name)
+    {
+        $category=new Category();
+        $category->name=$name;
+        $category->save();
+    }
+
     public function getAllCategories()
     {
         return $this->Category->all();
     }
+    public function getSome($category)
+    {
+       return $posts=$this->Category->find($category[0])->posts()->get();
+    }
+
 }

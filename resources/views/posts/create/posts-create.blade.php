@@ -27,5 +27,13 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+            <form action="{{route('category')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div>
+                    <input type="text" name="category_name" placeholder="new category ">
+                    <input type="submit"  value="Add category">
+                </div>
+            </form>
     </div>
 @endsection
+

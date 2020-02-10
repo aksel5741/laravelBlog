@@ -5,7 +5,6 @@ namespace App\Repository;
 
 use App\Comment;
 use App\Contracts\CommentRepositoryInterface\CommentRepositoryInterface;
-use App\Contracts\CommentRepositoryInterface\Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -20,7 +19,7 @@ class CommentRtrepository implements CommentRepositoryInterface
 
    public function getPostComments($post_id)
    {
-       return $this->Comment->where('post_id',$post_id)->get;
+       return $this->Comment->where('post_id',$post_id)->paginate(2);
    }
 
    public function create($comment, $post_id, $author_id = 0)

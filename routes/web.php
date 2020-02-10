@@ -20,9 +20,14 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('filtered-posts','CategoryController@make');
+Route::get('categories-filter', 'CategoryController@filter')->name('cat_filter');
+
 
 Route::get('posts-create', 'PostController@index')->name('post-create');
 Route::post('posts-create', 'PostController@create');
+
+Route::post('create-category', 'CategoryController@create')->name('category');
 
 Route::get('posts-change/{post}', 'PostController@postChange')->name('post-change');
 Route::patch('posts-change/{post}', 'PostController@postChange')->name('patch-post');

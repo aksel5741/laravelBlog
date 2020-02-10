@@ -8,7 +8,7 @@ use App\Comment;
 use App\Contracts\PostRepositoryInterface\PostRepositoryInterface;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
-use Mockery\Generator\StringManipulation\Pass\ClassNamePass;
+
 
 class PostRepository implements PostRepositoryInterface
 {
@@ -36,17 +36,14 @@ class PostRepository implements PostRepositoryInterface
 
     public function getUnansweredPosts()
     {
-        $posts=$this->getAllPosts();
+        $posts=$this->Post->doesntHave('comment')->paginate(2);
 
-        $filtered = $posts->filter(function ($value){
-            return $value->comment->isNotEmpty();
-        });
-        $filtered->paginate(2);
-       return $filtered;
+        return $posts;
     }
 
     public function createPost($title,$post_content,$categories=null)
     {
+
         $this->Post->title=$title;
         $this->Post->post_content=$post_content;
         $this->Post->author_id=Auth::id();
@@ -61,10 +58,17 @@ class PostRepository implements PostRepositoryInterface
         $posts=$this->Post->orderBy('views','desc')->paginate(2);
         return $posts;
     }
+
+    public function getPostsByCategory($category)
+    {
+        $posts=$this->Post->categories()->where('name','animal')->get();
+        dd($posts);
+        return $posts;
+    }
+
     public function updatePost($title,$post_content,$post_id,$categories)
     {
         $oldPost=$this->getPostById($post_id);
-        //dd($post);
         $oldPost->title=$title;
         $oldPost->post_content=$post_content;
         $oldPost->author_id=Auth::id();

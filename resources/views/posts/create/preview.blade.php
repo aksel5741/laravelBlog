@@ -2,6 +2,7 @@
 
 <div class="container">
     <div class="row">
+        {{--{{dd($post)}}--}}
         <div class="[ col-xs-12 col-sm-offset-1 col-sm-5 ]">
             <div class="[ panel panel-default ] panel-google-plus">
                 <div class="panel-heading">
