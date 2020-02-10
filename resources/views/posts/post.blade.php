@@ -7,7 +7,7 @@
                 <div class="[ panel panel-default ] panel-google-plus">
                     <div class="panel-heading">
                         <img class="[ img-circle pull-left ]" width="50px" height="50px" src="/storage/avatars/{{$post->user->avatar}}" alt="Mouse0270" />
-                        <h3>{{$post->user->name}}</h3> <h5><span>published</span> <span>{{$post->created_at}}</span></h5>
+                        <a href="{{route('profile',['user'=>$post->user->id])}}"><h3>{{$post->user->name}}</h3></a> <h5><span>published</span> <span>{{$post->created_at}}</span></h5>
                         <h2>&lt;{{$post->title}}&gt;</h2>
                     </div>
                     <div class="panel-body">

@@ -32,7 +32,7 @@ class PostController extends Controller
     public function postChange(Request $request,$post)
     {
         if($request->method()=='PATCH'){
-            $this->PostRepositoryInterface->updatePost($request->title,$request->category,$request->post_content,$post->id,$request->input('categories'));
+            $this->PostRepositoryInterface->updatePost($request->title,$request->post_content,$post->id,$request->input('categories'));
         };
         $categories=$this->categoryRepositoryInterface->getAllCategories();
         return view('posts.create.posts-create',['categories'=>$categories,'post'=>$post]);
@@ -45,7 +45,7 @@ class PostController extends Controller
 
     public function create(Request $request)
     {
-        $this->PostRepositoryInterface->createPost($request->title,$request->category,$request->post_content,$request->input('categories'));
+        $this->PostRepositoryInterface->createPost($request->title,$request->post_content,$request->input('categories'));
          return back();
     }
 

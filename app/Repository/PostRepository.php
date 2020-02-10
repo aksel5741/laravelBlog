@@ -45,10 +45,9 @@ class PostRepository implements PostRepositoryInterface
        return $filtered;
     }
 
-    public function createPost($title,$category,$post_content,$categories=null)
+    public function createPost($title,$post_content,$categories=null)
     {
         $this->Post->title=$title;
-        $this->Post->category=$category;
         $this->Post->post_content=$post_content;
         $this->Post->author_id=Auth::id();
         $this->Post->save();
@@ -62,12 +61,11 @@ class PostRepository implements PostRepositoryInterface
         $posts=$this->Post->orderBy('views','desc')->paginate(2);
         return $posts;
     }
-    public function updatePost($title,$category,$post_content,$post_id,$categories)
+    public function updatePost($title,$post_content,$post_id,$categories)
     {
         $oldPost=$this->getPostById($post_id);
         //dd($post);
         $oldPost->title=$title;
-        $oldPost->category=$category;
         $oldPost->post_content=$post_content;
         $oldPost->author_id=Auth::id();
         $oldPost->save();

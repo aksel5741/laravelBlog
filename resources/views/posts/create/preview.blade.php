@@ -10,7 +10,7 @@
                     <h2>&lt;{{$post->title}}&gt;</h2>
                 </div>
                 <div class="panel-body">
-                    <p >{{mb_substr($post->post_content, 0, 150, 'UTF-8') . '...'}}</p>
+                    <div>{{mb_substr($post->post_content, 0, 150, 'UTF-8') . '...'}}</div>
                 </div>
                 <div class="panel-footer">
                     <p >Views:{{$post->views}}</p>

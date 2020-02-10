@@ -14,5 +14,5 @@ interface PostRepositoryInterface
 
     public function getUnansweredPosts();
 
-    public function createPost($title,$category,$post_content,$categories);
+    public function createPost($title,$post_content,$categories);
 }
