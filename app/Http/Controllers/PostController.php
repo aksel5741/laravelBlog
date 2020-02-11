@@ -45,7 +45,7 @@ class PostController extends Controller
 
     public function create(Request $request)
     {
-        $this->PostRepositoryInterface->createPost($request->title,$request->post_content,$request->input('categories'));
+        if($request->title && $request->post_content)$this->PostRepositoryInterface->createPost($request->title,$request->post_content,$request->input('categories'));
          return back();
     }
 

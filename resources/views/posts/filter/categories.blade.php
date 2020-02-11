@@ -5,7 +5,7 @@
     <form action="filtered-posts">
         <br><label calss="" >Categories:</label><br>
         @foreach($categories as $category)
-            <input type="radi" name="categories" value="{{$category->id}}">
+            <input type="radio" name="categories" value="{{$category->id}}">
             <label calss="" >{{$category->name}}</label>
         @endforeach
         <button type="submit" class="btn btn-primary">Submit</button>

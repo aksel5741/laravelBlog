@@ -19,7 +19,7 @@ class CommentsController extends Controller
 
     public function create(Request $request,$post)
     {
-        $this->CommentRepositoryInterface->create($request->comment,$post->id,Auth::id());
+        if($request->comment)$this->CommentRepositoryInterface->create($request->comment,$post->id,Auth::id());
         return back();
     }
 }
