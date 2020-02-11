@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70455b96-a3f8-403f-b0b3-906085a142c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/filter/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/filter/categories.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
